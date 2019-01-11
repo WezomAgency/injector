@@ -1,0 +1,11 @@
+/.cache
+/.idea
+/.npm
+/.temp
+/.vscode
+/*.log*
+/nbproject
+/node_modules
+
+thumbs.db
+.DS_Store
