@@ -1,33 +1,23 @@
 'use strict';
 
 /**
- * @module
+ * @fileOverview exports Injector instance
  */
 
 // ----------------------------------------
 // Imports
 // ----------------------------------------
 
-// ----------------------------------------
-// Private
-// ----------------------------------------
+const Injector = require('./lib/Injector');
 
 // ----------------------------------------
 // Public
 // ----------------------------------------
 
-class WebpackInjector {
-	constructor (options) {
-
-	}
-}
+const injector = new Injector();
 
 // ----------------------------------------
 // Exports
 // ----------------------------------------
 
-module.exports = WebpackInjector;
-
-// ----------------------------------------
-// Definitions
-// ----------------------------------------
+module.exports = injector;
