@@ -6,6 +6,7 @@
 /*.log*
 /nbproject
 /node_modules
+/dist
 
 thumbs.db
 .DS_Store

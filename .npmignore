@@ -1,1 +1,4 @@
-webpack.injector.dev.js
+/.editorconfig
+/resources
+/tests
+/webpack.injector.dev.js
