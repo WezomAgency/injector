@@ -21,9 +21,9 @@ const fromCwd = require('from-cwd');
 // ----------------------------------------
 
 injector
-	.mode('development')
-	.hot(true)
-	.sourcemaps(true)
+	.mode('production')
+	.hot(false)
+	.sourcemaps(false)
 	.js(fromCwd('src/js/app.js'), fromCwd('dist/js/bundle-app.js'))
 	.outputPublicPath('/dist/js/')
 	.sass(fromCwd('src/sass/common.scss'), fromCwd('dist/css/bundle-common.css'))
