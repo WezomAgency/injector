@@ -10,6 +10,7 @@
 // ----------------------------------------
 
 const injector = require('./index');
+const fromCwd = require('from-cwd');
 
 // ----------------------------------------
 // Private
@@ -19,7 +20,22 @@ const injector = require('./index');
 // Public
 // ----------------------------------------
 
-injector.mode('development');
+injector
+	.mode('development')
+	.hot(true)
+	.sourcemaps(true);
+
+injector
+	.js(fromCwd('src/js/app.js'), fromCwd('dist/js/bundle-app.js'))
+	.outputPublicPath('/dist/js/');
+
+injector
+	.sass(fromCwd('src/sass/common.scss'), fromCwd('dist/css/bundle-common.css'));
+
+injector
+	.externals('jquery', 'jQuery');
+
+console.log(injector.exportWebpackConfig());
 
 // ----------------------------------------
 // Exports
