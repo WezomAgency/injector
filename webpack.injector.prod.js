@@ -24,7 +24,7 @@ injector
 	.mode('production')
 	.hot(false)
 	.sourcemaps(false)
-	.outputPublicPath('/dist/js/')
+	.publicPath('/dist/js/')
 	.js(fromCwd('src/js/app.js'), fromCwd('dist/js/bundle-app.js'))
 	.sass(fromCwd('src/sass/common.scss'), fromCwd('dist/css/bundle-common.css'))
 	.externals('jquery', 'jQuery');
