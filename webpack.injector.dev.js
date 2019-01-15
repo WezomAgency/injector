@@ -29,6 +29,16 @@ injector
 	.sass(fromCwd('src/sass/common.scss'), fromCwd('dist/css/bundle-common.css'))
 	.externals('jquery', 'jQuery');
 
+injector.clearPaths([
+	fromCwd('./tests/test.txt'),
+	fromCwd('./tests/test2.txt'),
+]);
+
+injector.copyFiles([{
+	source: fromCwd('lib/helpers/logger.js'),
+	dist: fromCwd('test/tes4t.txt')
+}]);
+
 console.log(injector.exportWebpackConfig());
 
 // ----------------------------------------
