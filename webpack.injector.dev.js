@@ -10,7 +10,6 @@
 // ----------------------------------------
 
 const injector = require('./index');
-const fromCwd = require('from-cwd');
 
 // ----------------------------------------
 // Private
@@ -25,19 +24,12 @@ injector
 	.hot(true)
 	.sourcemaps(true)
 	.publicPath('/dist/js/')
-	.js(fromCwd('src/js/app.js'), fromCwd('dist/js/bundle-app.js'))
-	.sass(fromCwd('src/sass/common.scss'), fromCwd('dist/css/bundle-common.css'))
+	.js('./src/js/app.js', './dist/js/bundle-app.js')
+	.sass('./src/sass/common.scss', './dist/css/bundle-common.css')
+	.modernizrrc('.modernizrrc')
+	.bLENME('custom-jquery-methods')
+	.bLENME('swiper')
 	.externals('jquery', 'jQuery');
-
-injector.clearPaths([
-	fromCwd('./tests/test.txt'),
-	fromCwd('./tests/test2.txt'),
-]);
-
-injector.copyFiles([{
-	source: fromCwd('lib/helpers/logger.js'),
-	dist: fromCwd('test/tes4t.txt')
-}]);
 
 console.log(injector.exportWebpackConfig());
 
