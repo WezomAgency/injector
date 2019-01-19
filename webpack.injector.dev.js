@@ -19,22 +19,11 @@ const injector = require('./index');
 // Public
 // ----------------------------------------
 
-injector
-	.mode('development')
-	.hot(true)
-	.sourcemaps(true)
-	.publicPath('/dist/js/')
-	.js('./src/js/app.js', './dist/js/bundle-app.js')
-	.sass('./src/sass/common.scss', './dist/css/bundle-common.css')
-	.modernizrrc('.modernizrrc')
-	.bLENME('custom-jquery-methods')
-	.bLENME('swiper')
-	.externals('jquery', 'jQuery');
-
-console.log(injector.exportWebpackConfig());
+injector.helpers.copy('./src/js/app.js', './dist/js/app.js', true);
+injector.helpers.copy('./node_modules/webpack/readme.md', './dist/TEST.md', true);
 
 // ----------------------------------------
 // Exports
 // ----------------------------------------
 
-module.exports = injector.exportWebpackConfig();
+// module.exports = injector.exportWebpackConfig();
