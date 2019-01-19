@@ -1,4 +1,4 @@
-# webpack-injector
+# :page_facing_up: webpack injector
 
 ### Documentation
 

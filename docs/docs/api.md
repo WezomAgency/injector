@@ -1,4 +1,4 @@
-# API
+# :page_facing_up: API
 
 #### *Table of contents*
 
