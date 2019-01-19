@@ -1,8 +1,18 @@
 # API
 
+#### *Table of contents*
+
+- [helpers](#helpers)
+    - [helpers.clear](#helpersclear)
+    - [helpers.copy](#helperscopy)
+
 ## helpers
 
+:arrow_left: [Home](../index.md) | :arrow_up: [_Table of contents_](#table-of-contents)
+
 ### helpers.clear
+
+:arrow_left: [Home](../index.md) | :arrow_up: [_Table of contents_](#table-of-contents)
 
 Clear some folders or files, before webpack starts to bundle your project
 
@@ -31,6 +41,8 @@ injector.helpers.clear('./my-logs/stats.json');
 ---
 
 ### helpers.copy
+
+:arrow_left: [Home](../index.md) | :arrow_up: [_Table of contents_](#table-of-contents)
 
 Copy file from `sourceFile` to `destFile`.  
 This can be useful when need to copy files from directories 

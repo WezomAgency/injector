@@ -1,5 +1,5 @@
 # webpack-injector
 
-Table of contents
+### Documentation
 
-1. [API](./api.md)
+1. [API](./docs/api.md)
