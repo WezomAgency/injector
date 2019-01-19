@@ -1,18 +1,49 @@
 # API
 
-#### *Table of contents*
+:arrow_left: [Home](./index.md)
 
+#### *Sections*
+
+- [silent()](#silent)
 - [helpers](#helpers)
-    - [helpers.clear](#helpersclear)
-    - [helpers.copy](#helperscopy)
+    - [helpers.clear()](#helpersclear)
+    - [helpers.copy()](#helperscopy)
+
+## silent()
+
+:arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
+
+Disable/enable information logs in terminal.  
+_**Note!** The error logs will not be suppressed_
+
+```js
+injector.silent(value): injector
+```
+
+_Parameters:_
+
+| Name       | Type      | Attributes    | Default       | Description                                    |
+| :--------- | :-------- | :------------ | :------------ | :--------------------------------------------- |
+| **value**  | _boolean_ |               |               | `true` - disable / `false` - enable logs again |
+
+_Returns:_ `injector`
+
+_Examples:_
+
+```js
+const injector = require('webpack-injector');
+
+injector.helpers.clear('./public/assets/');
+injector.helpers.clear('./my-logs/stats.json');
+```
 
 ## helpers
 
-:arrow_left: [Home](../index.md) | :arrow_up: [_Table of contents_](#table-of-contents)
+:arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
 
-### helpers.clear
+### helpers.clear()
 
-:arrow_left: [Home](../index.md) | :arrow_up: [_Table of contents_](#table-of-contents)
+:arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
 
 Clear some folders or files, before webpack starts to bundle your project
 
@@ -40,9 +71,9 @@ injector.helpers.clear('./my-logs/stats.json');
 
 ---
 
-### helpers.copy
+### helpers.copy()
 
-:arrow_left: [Home](../index.md) | :arrow_up: [_Table of contents_](#table-of-contents)
+:arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
 
 Copy file from `sourceFile` to `destFile`.  
 This can be useful when need to copy files from directories 
@@ -54,8 +85,8 @@ injector.helpers.copy(sourceFile, destFile[, onlyIfNewer]): void
 
 _Parameters:_
 
-| Name            | Type       | Attributes    | Default       | Description |
-| :-------------- | :--------- | :------------ | :------------ | :---------- |
+| Name            | Type       | Attributes    | Default       | Description                                    |
+| :-------------- | :--------- | :------------ | :------------ | :--------------------------------------------- |
 | **sourceFile**  | _string_   |               |               | relative path from your CWD to the source file |
 | **destFile**    | _string_   |               |               | relative path from your CWD to the destination file. **Note**, if folders path does not exist - it will be created |
 | **onlyIfNewer** | _boolean_  | `<optional>`  | `false`       | copy only if source file is newer than destination file |
