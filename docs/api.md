@@ -4,6 +4,32 @@
 
 ### helpers.clear
 
+Clear some folders or files, before webpack starts to bundle.
+
+```js
+injector.helpers.clear(paths): void
+```
+
+_Parameters:_
+
+| Name       | Type              | Attributes    | Default       | Description               |
+| :--------- | :---------------- | :------------ | :------------ | :------------------------ |
+| **paths**  | _string/string[]_ |               |               | paths that need to remove |
+
+
+_Returns:_ `undefined`
+
+_Examples:_
+
+```js
+const injector = require('webpack-injector');
+
+injector.helpers.clear('./public/assets/');
+injector.helpers.clear('./my-logs/stats.json');
+```
+
+---
+
 ### helpers.copy
 
 Copy file from `sourceFile` to `destFile`.  
@@ -16,7 +42,7 @@ injector.helpers.copy(sourceFile, destFile[, onlyIfNewer]): void
 
 _Parameters:_
 
-| Name            | Data type  | Attributes    | Default value | Description |
+| Name            | Type       | Attributes    | Default       | Description |
 | :-------------- | :--------- | :------------ | :------------ | :---------- |
 | **sourceFile**  | _string_   |               |               | relative path from your CWD to the source file |
 | **destFile**    | _string_   |               |               | relative path from your CWD to the destination file. **Note**, if folders path does not exist - it will be created |
