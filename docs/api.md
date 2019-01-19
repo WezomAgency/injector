@@ -4,7 +4,7 @@
 
 ### helpers.clear
 
-Clear some folders or files, before webpack starts to bundle.
+Clear some folders or files, before webpack starts to bundle your project
 
 ```js
 injector.helpers.clear(paths): void
