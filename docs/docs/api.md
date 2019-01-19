@@ -2,15 +2,42 @@
 
 #### *Table of contents*
 
+- [silent()](#silent)
 - [helpers](#helpers)
-    - [helpers.clear](#helpersclear)
-    - [helpers.copy](#helperscopy)
+    - [helpers.clear()](#helpersclear)
+    - [helpers.copy()](#helperscopy)
+
+## silent()
+
+Disable/enable information logs in terminal.  
+_**Note!** The error logs will not be suppressed_
+
+```js
+injector.silent(value): injector
+```
+
+_Parameters:_
+
+| Name       | Type      | Attributes    | Default       | Description                                    |
+| :--------- | :-------- | :------------ | :------------ | :--------------------------------------------- |
+| **value**  | _boolean_ |               |               | `true` - disable / `false` - enable logs again |
+
+_Returns:_ `undefined`
+
+_Examples:_
+
+```js
+const injector = require('webpack-injector');
+
+injector.helpers.clear('./public/assets/');
+injector.helpers.clear('./my-logs/stats.json');
+```
 
 ## helpers
 
 :arrow_left: [Home](../index.md) | :arrow_up: [_Table of contents_](#table-of-contents)
 
-### helpers.clear
+### helpers.clear()
 
 :arrow_left: [Home](../index.md) | :arrow_up: [_Table of contents_](#table-of-contents)
 
@@ -40,7 +67,7 @@ injector.helpers.clear('./my-logs/stats.json');
 
 ---
 
-### helpers.copy
+### helpers.copy()
 
 :arrow_left: [Home](../index.md) | :arrow_up: [_Table of contents_](#table-of-contents)
 

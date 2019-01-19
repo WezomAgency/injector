@@ -2,6 +2,8 @@
 
 /**
  * @fileOverview exports Injector instance
+ * @author Oleg Dutchenko <dutchenko.o.dev@gmail.com>
+ * @licence MIT
  */
 
 // ----------------------------------------
