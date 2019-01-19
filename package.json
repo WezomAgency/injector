@@ -1,7 +1,7 @@
 {
   "name": "webpack-injector",
   "version": "0.0.0",
-  "description": "webpack config on steroids",
+  "description": "Webpack Injector - webpack config on steroids",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
