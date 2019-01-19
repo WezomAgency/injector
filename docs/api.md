@@ -4,12 +4,18 @@
 
 #### *Sections*
 
-- [silent()](#silent)
-- [helpers](#helpers)
+- [Methods](#helpers)
+    - [silent()](#silent)
+- [Properties](#properties)
+- [Helpers](#helpers)
     - [helpers.clear()](#helpersclear)
     - [helpers.copy()](#helperscopy)
+    
+---
 
-## silent()
+## Methods
+
+### silent()
 
 :arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
 
@@ -37,7 +43,13 @@ injector.helpers.clear('./public/assets/');
 injector.helpers.clear('./my-logs/stats.json');
 ```
 
-## helpers
+---
+
+## Properties
+
+---
+
+## Helpers
 
 :arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
 
