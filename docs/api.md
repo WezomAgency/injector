@@ -19,7 +19,7 @@
 
 ### silent()
 
-:arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
+:arrow_left: [Home](./index.md) | :arrow_up: [Top](#readme)
 
 Disable/enable information logs in terminal.  
 _**Note!** The error logs will not be suppressed_
@@ -49,11 +49,10 @@ injector.helpers.clear('./my-logs/stats.json');
 
 ## Properties
 
-:arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
 
 ### isProduction
 
-:arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
+:arrow_left: [Home](./index.md) | :arrow_up: [Top](#readme)
 
 _readonly_  
 _type: `boolean`_  
@@ -72,7 +71,7 @@ injector.isProduction: boolean
 
 ### isWatching
 
-:arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
+:arrow_left: [Home](./index.md) | :arrow_up: [Top](#readme)
 
 _readonly_  
 _type: `boolean`_  
@@ -88,11 +87,10 @@ injector.isWatching: boolean
 
 ## Helpers
 
-:arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
 
 ### helpers.clear()
 
-:arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
+:arrow_left: [Home](./index.md) | :arrow_up: [Top](#readme)
 
 Clear some folders or files, before webpack starts to bundle your project
 
@@ -122,7 +120,7 @@ injector.helpers.clear('./my-logs/stats.json');
 
 ### helpers.copy()
 
-:arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
+:arrow_left: [Home](./index.md) | :arrow_up: [Top](#readme)
 
 Copy file from `sourceFile` to `destFile`.  
 This can be useful when need to copy files from directories 
