@@ -8,7 +8,7 @@
     - [silent()](#silent)
 - [Properties](#properties)
     - [isProduction](#isproduction)
-    - [iswatching](#iswatching)
+    - [isWatching](#iswatching)
 - [Helpers](#helpers)
     - [helpers.clear()](#helpersclear)
     - [helpers.copy()](#helperscopy)
