@@ -7,6 +7,8 @@
 - [Methods](#helpers)
     - [silent()](#silent)
 - [Properties](#properties)
+    - [isProduction](#isproduction)
+    - [iswatching](#iswatching)
 - [Helpers](#helpers)
     - [helpers.clear()](#helpersclear)
     - [helpers.copy()](#helperscopy)
@@ -46,6 +48,41 @@ injector.helpers.clear('./my-logs/stats.json');
 ---
 
 ## Properties
+
+:arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
+
+### isProduction
+
+:arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
+
+_readonly_  
+_type: `boolean`_  
+_default: `false`_
+
+Determined value - is webpack will be runned in production mode or development mode
+
+```js
+injector.isProduction: boolean
+```
+
+
+---
+
+
+
+### isWatching
+
+:arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
+
+_readonly_  
+_type: `boolean`_  
+_default: `false`_
+
+Determined value - is webpack will be watching files or not
+
+```js
+injector.isWatching: boolean
+```
 
 ---
 
