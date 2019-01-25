@@ -122,12 +122,12 @@ injector.helpers.clear('./my-logs/stats.json');
 
 :arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
 
-Copy file from `sourceFile` to `destFile`.  
+Copy file from `sourceFile` to `distFile`.  
 This can be useful when need to copy files from directories 
 that are not included in the main distribution of the project or repository.
 
 ```js
-injector.helpers.copy(sourceFile, destFile[, onlyIfNewer]): void
+injector.helpers.copy(sourceFile, distFile[, onlyIfNewer]): void
 ```
 
 _Parameters:_
@@ -135,7 +135,7 @@ _Parameters:_
 | Name            | Type       | Attributes    | Default       | Description                                    |
 | :-------------- | :--------- | :------------ | :------------ | :--------------------------------------------- |
 | **sourceFile**  | _string_   |               |               | relative path from your CWD to the source file |
-| **destFile**    | _string_   |               |               | relative path from your CWD to the destination file. **Note**, if folders path does not exist - it will be created |
+| **distFile**    | _string_   |               |               | relative path from your CWD to the destination file. **Note**, if folders path does not exist - it will be created |
 | **onlyIfNewer** | _boolean_  | `<optional>`  | `false`       | copy only if source file is newer than destination file |
 
 
