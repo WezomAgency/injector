@@ -24,14 +24,17 @@ injector.app('./src/js/app.js', './dist/js/bundle-app.js')
 		.sourcemaps(injector.isProduction ? false : 'eval-source-map')
 		.sass('./src/sass/style.scss', './dist/css/bundle-style.css')
 		.sass('./src/sass/common.scss', './dist/css/bundle-common.css')
-		.postcssPlugin(autoprefixer({
+		.cssLoaderOptions({
+			url: false
+		})
+		.postcssLoaderPlugins(autoprefixer({
 			browsers: ['> 1%', 'ie 11'],
 			cascade: false
 		}))
-		.postcssPlugin(cssMqPacker({
+		.postcssLoaderPlugins(cssMqPacker({
 			sort: sortCssMediaQueries
 		}))
-		.postcssPlugin(injector.isProduction ? require('cssnano')({
+		.postcssLoaderPlugins(injector.isProduction ? require('cssnano')({
 			preset: ['default', {
 				zindex: false,
 				autoprefixer: false,
