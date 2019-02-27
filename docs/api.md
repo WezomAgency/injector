@@ -1,17 +1,25 @@
 # API
 
-:arrow_left: [Home](./index.md)
+:arrow_left: [Documentation](./index.md)
 
 #### *Sections*
 
-- [silent()](#silent)
-- [helpers](#helpers)
+- [Methods](#helpers)
+    - [silent()](#silent)
+- [Properties](#properties)
+    - [isProduction](#isproduction)
+    - [isWatching](#iswatching)
+- [Helpers](#helpers)
     - [helpers.clear()](#helpersclear)
     - [helpers.copy()](#helperscopy)
+    
+---
 
-## silent()
+## Methods
 
-:arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
+### silent()
+
+:arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
 
 Disable/enable information logs in terminal.  
 _**Note!** The error logs will not be suppressed_
@@ -37,13 +45,52 @@ injector.helpers.clear('./public/assets/');
 injector.helpers.clear('./my-logs/stats.json');
 ```
 
-## helpers
+---
 
-:arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
+## Properties
+
+
+### isProduction
+
+:arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
+
+_readonly_  
+_type: `boolean`_  
+_default: `false`_
+
+Determined value - is webpack will be runned in production mode or development mode
+
+```js
+injector.isProduction: boolean
+```
+
+
+---
+
+
+
+### isWatching
+
+:arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
+
+_readonly_  
+_type: `boolean`_  
+_default: `false`_
+
+Determined value - is webpack will be watching files or not
+
+```js
+injector.isWatching: boolean
+```
+
+---
+
+## Helpers
+
 
 ### helpers.clear()
 
-:arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
+:arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
 
 Clear some folders or files, before webpack starts to bundle your project
 
@@ -73,14 +120,14 @@ injector.helpers.clear('./my-logs/stats.json');
 
 ### helpers.copy()
 
-:arrow_left: [Home](./index.md) | :arrow_up: [_Top_](#readme)
+:arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
 
-Copy file from `sourceFile` to `destFile`.  
+Copy file from `sourceFile` to `distFile`.  
 This can be useful when need to copy files from directories 
 that are not included in the main distribution of the project or repository.
 
 ```js
-injector.helpers.copy(sourceFile, destFile[, onlyIfNewer]): void
+injector.helpers.copy(sourceFile, distFile[, onlyIfNewer]): void
 ```
 
 _Parameters:_
@@ -88,7 +135,7 @@ _Parameters:_
 | Name            | Type       | Attributes    | Default       | Description                                    |
 | :-------------- | :--------- | :------------ | :------------ | :--------------------------------------------- |
 | **sourceFile**  | _string_   |               |               | relative path from your CWD to the source file |
-| **destFile**    | _string_   |               |               | relative path from your CWD to the destination file. **Note**, if folders path does not exist - it will be created |
+| **distFile**    | _string_   |               |               | relative path from your CWD to the destination file. **Note**, if folders path does not exist - it will be created |
 | **onlyIfNewer** | _boolean_  | `<optional>`  | `false`       | copy only if source file is newer than destination file |
 
 
