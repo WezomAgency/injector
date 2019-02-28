@@ -53,9 +53,9 @@ injector.helpers.copy('./node_modules/webpack/readme.md', './dist/TEST.md', true
 
 
 
-console.log(injector.__defaults);
-console.log('--------------');
-console.log(injector.exportConfig());
+// console.log(injector.__defaults);
+// console.log('--------------');
+// console.log(injector.exportConfig());
 
 // ----------------------------------------
 // Exports
