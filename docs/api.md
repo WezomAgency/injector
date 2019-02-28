@@ -5,10 +5,25 @@
 #### *Sections*
 
 - [Methods](#helpers)
+    - [app](#app)
+    - [cssLoaderOptions](#cssloaderoptions)
+    - [customRules](#customrules)
+    - [exportConfig](#exportconfig)
+    - [externals](#externals)
+    - [postcssLoaderPlugins](#postcssloaderplugins)
+    - [publicPath](#publicpath)
+    - [plugins](#plugins)
+    - [resolveAlias](#resolveAlias)
+    - [resolveModules](#resolveModules)
+    - [sass](#sass)
+    - [sassLoaderOptions](#sassloaderoptions)
     - [silent()](#silent)
+    - [sourcemaps](#sourcemaps)
+    - [styleLoaderOptions](#styleloaderoptions)
 - [Properties](#properties)
     - [isProduction](#isproduction)
     - [isWatching](#iswatching)
+- [Methods](#methods)
 - [Helpers](#helpers)
     - [helpers.clear()](#helpersclear)
     - [helpers.copy()](#helperscopy)
@@ -16,6 +31,58 @@
 ---
 
 ## Methods
+
+### app()
+
+:arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
+
+Specify your main single JS file.
+
+```js
+injector.app(sourceFile, distFile): Injector
+```
+
+_Parameters:_
+
+| Name | Type | Default | Description |
+| :--- | :--- | :------ | :---------- |
+| **sourceFile**  | `string` | --- | Relative FS path from yout CWD = source file |
+| **distFile**  | `string` | --- | Relative FS path from yout CWD = destinaion file (css result) |
+
+Returns: `Injector` instance
+
+```js
+injector.app('./src/app.js', './dist/bundled-app.js');
+```
+
+---
+
+### publicPath()
+
+:arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
+
+This option specifies the public URL of the output directory when referenced in a browser.  
+See [webpack configuration -> output.publicPath](https://webpack.js.org/configuration/output#outputpublicpath)
+
+```js
+injector.publicPath(path): Injector
+```
+
+_Parameters:_
+
+| Name | Type | Default | Description |
+| :--- | :--- | :------ | :---------- |
+| **path**  | `string` | --- | public URL |
+
+Returns: `Injector` instance
+
+_Usage example:_
+
+```js
+injector
+    .app('./src/app.js', './dist/bundled-app.js')
+    .publicPath('./src/app.js', './dist/bundled-app.js');
+```
 
 ### silent()
 
@@ -81,7 +148,9 @@ Determined value - is webpack will be watching files or not
 
 ```js
 injector.isWatching: boolean
-```
+
+
+
 
 ---
 
@@ -149,3 +218,7 @@ const injector = require('webpack-injector');
 injector.helpers.copy('./node_modules/jquery/dist/jquery.min.js', './public/assets/js/vendors/jquery.js', true);
 injector.helpers.copy('./node_modules/webpack/readme.md', './dist/TEST.md', true);
 ```
+
+---
+
+
