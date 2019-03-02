@@ -36,11 +36,11 @@
 
 :arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
 
-Specify your main single JS file.
-
 ```js
 injector.app(sourceFile, distFile): Injector
 ```
+
+Specify your main single JS file.
 
 _Parameters:_
 
@@ -49,10 +49,53 @@ _Parameters:_
 | **sourceFile**  | `string` | --- | Relative FS path from yout CWD = source file |
 | **distFile**  | `string` | --- | Relative FS path from yout CWD = destinaion file (css result) |
 
-Returns: `Injector` instance
+_Method returns:_ `Injector` instance
+
+_Usage example:_
 
 ```js
 injector.app('./src/app.js', './dist/bundled-app.js');
+```
+
+---
+
+### cssLoaderOptions()
+
+:arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
+
+```js
+injector.cssLoaderOptions(options): Injector
+```
+
+Specify your css-loader options.  
+See list of all options [css-loader#options](https://github.com/webpack-contrib/css-loader#options)
+
+_Parameters:_
+
+| Name | Type | Default | Description |
+| :--- | :--- | :------ | :---------- |
+| **options**  | `Object` | _see description below_ | Relative FS path from yout CWD = source file |
+
+_Default options:_
+
+| Name | Value | Description |
+| :--- | :---- | :---------- |
+| **sourceMap** | _calculated_  | Use value from [sourcemaps()](#sourcemaps) |
+| **importLoader**  | `1` | ---
+
+_Method returns:_ `Injector` instance
+
+_Usage example:_
+
+```js
+injector
+    .app('./src/app.js', './dist/bundled-app.js')
+    .sass('./src/sass/style.scss', './dist/bundled-style.css')
+    .cssLoaderOptions({
+        sourceMap: true,
+        url: false,
+        import: false
+    });
 ```
 
 ---
@@ -74,7 +117,7 @@ _Parameters:_
 | :--- | :--- | :------ | :---------- |
 | **path**  | `string` | --- | public URL |
 
-Returns: `Injector` instance
+_Method returns:_ `Injector` instance
 
 _Usage example:_
 
@@ -88,12 +131,12 @@ injector
 
 :arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
 
-Disable/enable information logs in terminal.  
-_**Note!** The error logs will not be suppressed_
-
 ```js
 injector.silent(value): injector
 ```
+
+Disable/enable information logs in terminal.  
+_**Note!** The error logs will not be suppressed_
 
 _Parameters:_
 
@@ -101,9 +144,9 @@ _Parameters:_
 | :--------- | :-------- | :------------ | :------------ | :--------------------------------------------- |
 | **value**  | _boolean_ |               |               | `true` - disable / `false` - enable logs again |
 
-_Returns:_ `injector`
+_Method returns:_ `Injector` instance
 
-_Examples:_
+_Usage example:_
 
 ```js
 const injector = require('webpack-injector');
@@ -148,11 +191,11 @@ Determined value - is webpack will be watching files or not
 
 ```js
 injector.isWatching: boolean
-
-
+```
 
 
 ---
+
 
 ## Helpers
 
