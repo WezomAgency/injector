@@ -68,7 +68,7 @@ injector.cssLoaderOptions(options): Injector
 ```
 
 Specify your css-loader options.  
-See list of all options [css-loader#options](https://github.com/webpack-contrib/css-loader#options)
+See list of all options <a href="https://github.com/webpack-contrib/css-loader#options" target="_blank>css-loader#options</a>
 
 _Parameters:_
 
