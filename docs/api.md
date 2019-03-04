@@ -156,7 +156,7 @@ injector
     .customRule({
         test: /\.modernizrrc$/,
         loader: 'modernizr-loader!json5-loader'
-    })
+    });
 ```
 
 
@@ -206,8 +206,6 @@ Setting wepback.config option `externals`
 See https://webpack.js.org/configuration/externals/  
 Call this method for each module you need.
 
-> _**Note!** This method for advanced users_
-
 _Parameters:_
 
 | Name | Type | Default | Description |
@@ -230,7 +228,7 @@ injector
         }
         callback();
     })
-    .external(/^(custom_regex|\$)$/i)
+    .external(/^(custom_regex|\$)$/i);
 ```
 
 
@@ -341,7 +339,6 @@ _Usage example:_
 
 ```js
 const injector = require('webpack-injector');
-
 injector.helpers.clear('./public/assets/');
 injector.helpers.clear('./my-logs/stats.json');
 ```
