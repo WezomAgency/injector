@@ -111,21 +111,13 @@ injector.customRules(rule): Injector
 Specify your own rules for module config.  
 See https://webpack.js.org/configuration/module#rule  
 
-> Note! This method for advanced users
-> Use
+> _**Note!** This method for advanced users_
 
 _Parameters:_
 
 | Name | Type | Default | Description |
 | :--- | :--- | :------ | :---------- |
-| **options**  | `Object` | _see description below_ | Relative FS path from yout CWD = source file |
-
-_Default options:_
-
-| Name | Value | Description |
-| :--- | :---- | :---------- |
-| **sourceMap** | _calculated_  | Use value from [sourcemaps()](#sourcemaps) |
-| **importLoader**  | `1` | ---
+| **rule**  | `Object` | --- | https://webpack.js.org/configuration/module/#nested-rules |
 
 _Method returns:_ `Injector` instance
 
@@ -133,12 +125,10 @@ _Usage example:_
 
 ```js
 injector
-    .app('./src/app.js', './dist/bundled-app.js')
-    .sass('./src/sass/style.scss', './dist/bundled-style.css')
-    .cssLoaderOptions({
-        sourceMap: true,
-        url: false,
-        import: false
+    .customRules({
+        test: /\.json$/,
+        type: 'javascript/auto',
+        loader: 'custom-json-loader'
     });
 ```
 
