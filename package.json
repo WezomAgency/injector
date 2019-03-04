@@ -1,6 +1,6 @@
 {
   "name": "webpack-injector",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Webpack Injector - webpack config on steroids",
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,9 @@
     "@babel/preset-env": "^7.2.3",
     "babel-loader": "^8.0.5",
     "babel-loader-exclude-node-modules-except": "^1.0.1",
+    "browser-sync": "^2.26.3",
+    "browser-sync-dev-hot-webpack-plugin": "^0.2.2",
+    "browser-sync-webpack-plugin": "^2.2.2",
     "chalk": "^2.4.2",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.0",
@@ -60,9 +63,6 @@
     "eslint": "^5.12.0",
     "eslint-config-wezom-relax": "^1.0.3",
     "json5-loader": "^1.0.1",
-    "sort-css-media-queries": "^1.4.3",
-    "browser-sync": "^2.26.3",
-    "browser-sync-dev-hot-webpack-plugin": "^0.2.2",
-    "browser-sync-webpack-plugin": "^2.2.2"
+    "sort-css-media-queries": "^1.4.3"
   }
 }
