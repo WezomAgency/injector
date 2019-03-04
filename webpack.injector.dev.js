@@ -27,14 +27,14 @@ injector.app('./src/js/app.js', './dist/js/bundle-app.js')
 		url: false
 	})
 	.styleLoaderOptions()
-	.postcssLoaderPlugins(autoprefixer({
+	.postcssLoaderPlugin(autoprefixer({
 		browsers: ['> 1%', 'ie 11'],
 		cascade: false
 	}))
-	.postcssLoaderPlugins(cssMqPacker({
+	.postcssLoaderPlugin(cssMqPacker({
 		sort: sortCssMediaQueries
 	}))
-	.postcssLoaderPlugins(injector.isProduction ? require('cssnano')({
+	.postcssLoaderPlugin(injector.isProduction ? require('cssnano')({
 		preset: ['default', {
 			zindex: false,
 			autoprefixer: false,

@@ -7,10 +7,10 @@
 - [Methods](#helpers)
     - [app()](#app)
     - [cssLoaderOptions()](#cssloaderoptions)
-    - [customRules()](#customrules)
+    - [customRule()](#customRule)
     - [exportConfig()](#exportconfig)
     - [externals()](#externals)
-    - [postcssLoaderPlugins()](#postcssloaderplugins)
+    - [postcssLoaderPlugin()](#postcssLoaderPlugin)
     - [publicPath()](#publicpath)
     - [plugins()](#plugins)
     - [resolveAlias()](#resolveAlias)
@@ -40,7 +40,8 @@
 injector.app(sourceFile, distFile): Injector
 ```
 
-Specify your main single JS file.
+Specify your main single JS file.  
+_**Note!** You can have only one file!_
 
 _Parameters:_
 
@@ -100,16 +101,17 @@ injector
 
 ---
 
-### customRules()
+### customRule()
 
 :arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
 
 ```js
-injector.customRules(rule): Injector
+injector.customRule(rule): Injector
 ```
 
 Specify your own rules for module config.  
 See https://webpack.js.org/configuration/module#rule  
+Call this method for each rule you need.
 
 > _**Note!** This method for advanced users_
 
@@ -125,11 +127,15 @@ _Usage example:_
 
 ```js
 injector
-    .customRules({
+    .customRule({
         test: /\.json$/,
         type: 'javascript/auto',
         loader: 'custom-json-loader'
-    });
+    })
+    .customRule({
+        test: /\.modernizrrc$/,
+        loader: 'modernizr-loader!json5-loader'
+    })
 ```
 
 ---
@@ -155,15 +161,16 @@ module.exports = injector.exportConfig();
 
 ---
 
-### postcssLoaderPlugins()
+### postcssLoaderPlugin()
 
 :arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
 
 ```js
-injector.postcssLoaderPlugins(plugin): Injector
+injector.postcssLoaderPlugin(plugin): Injector
 ```
 
-Specify plugins for [postcss-loader](https://github.com/postcss/postcss-loader).
+Specify plugins for [postcss-loader](https://github.com/postcss/postcss-loader).  
+Call this method for each plugin you need.
 
 _Parameters:_
 
@@ -177,13 +184,13 @@ _Usage example:_
 
 ```js
 injector
-    .postcssLoaderPlugins(
+    .postcssLoaderPlugin(
     	require('autoprefixer')({
             browsers: ['> 1%', 'ie 11'],
             cascade: false
         })
     )
-    .postcssLoaderPlugins(
+    .postcssLoaderPlugin(
     	require('cssnano')({
             preset: [
                 'default',
