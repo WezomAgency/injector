@@ -470,7 +470,7 @@ _readonly_
 _type: `boolean`_  
 _default: `false`_
 
-Determined value - is HMR usage turn on or not
+Determined value - is [Hot Module Replacement (HMR)](https://webpack.js.org/concepts/hot-module-replacement/) usage turn on or not
 
 ```js
 if (injector.isHot) {
