@@ -12,7 +12,7 @@
     - [external()](#external)
     - [postcssLoaderPlugin()](#postcssLoaderPlugin)
     - [publicPath()](#publicpath)
-    - [plugins()](#plugins)
+    - [plugin()](#plugin)
     - [resolveAlias()](#resolveAlias)
     - [resolveModules()](#resolveModules)
     - [sass()](#sass)
@@ -293,12 +293,12 @@ injector
 
 :arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
 
-This option specifies the public URL of the output directory when referenced in a browser.  
-See [webpack configuration -> output.publicPath](https://webpack.js.org/configuration/output#outputpublicpath)
-
 ```js
 injector.publicPath(path): Injector
 ```
+
+This option specifies the public URL of the output directory when referenced in a browser.  
+See [webpack configuration -> output.publicPath](https://webpack.js.org/configuration/output#outputpublicpath)
 
 _Parameters:_
 
@@ -315,6 +315,52 @@ injector
     .app('./src/app.js', './dist/bundled-app.js')
     .publicPath('./src/app.js', './dist/bundled-app.js');
 ```
+
+
+
+
+---
+
+
+
+
+
+### plugin()
+
+:arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
+
+```js
+injector.plugin(plugin): Injector
+```
+
+Specify webpack plugins for your project.  
+Call this method for each plugin you need.
+
+_Parameters:_
+
+| Name | Type | Default | Description |
+| :--- | :--- | :------ | :---------- |
+| **plugin**  | `*` | --- | https://webpack.js.org/configuration/plugins#plugins |
+
+_Method returns:_ `Injector` instance
+
+_Usage example:_
+
+```js
+injector
+    .plugin(new webpack.DefinePlugin({
+        // Definitions...
+    }));
+```
+
+
+
+
+---
+
+
+
+
 
 ### silent()
 
