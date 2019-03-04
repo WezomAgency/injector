@@ -9,7 +9,7 @@
     - [cssLoaderOptions()](#cssloaderoptions)
     - [customRule()](#customRule)
     - [exportConfig()](#exportconfig)
-    - [external()](#externals)
+    - [external()](#external)
     - [postcssLoaderPlugin()](#postcssLoaderPlugin)
     - [publicPath()](#publicpath)
     - [plugins()](#plugins)
@@ -220,15 +220,17 @@ _Usage example:_
 
 ```js
 injector
-    .customRule({
-        test: /\.json$/,
-        type: 'javascript/auto',
-        loader: 'custom-json-loader'
+    .external({
+        jquery: 'jQuery',
+        subtract: ['./math', 'subtract']
     })
-    .customRule({
-        test: /\.modernizrrc$/,
-        loader: 'modernizr-loader!json5-loader'
+    .external(function(context, request, callback) {
+        if (/^yourregex$/.test(request)){
+            return callback(null, 'commonjs ' + request);
+        }
+        callback();
     })
+    .external(/^(custom_regex|\$)$/i)
 ```
 
 

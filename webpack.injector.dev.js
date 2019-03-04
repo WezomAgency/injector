@@ -19,14 +19,13 @@ const sortCssMediaQueries = require('sort-css-media-queries');
 
 injector.app('./src/js/app.js', './dist/js/bundle-app.js')
 	.publicPath('/dist/js/')
-	.externals({ jquery: 'jQuery' })
+	.external({ jquery: 'jQuery' })
 	.sourcemaps(injector.isProduction ? false : 'eval-source-map')
 	.sass('./src/sass/style.scss', './dist/css/bundle-style.css')
 	.sass('./src/sass/common.scss', './dist/css/bundle-common.css')
 	.cssLoaderOptions({
 		url: false
 	})
-	.styleLoaderOptions()
 	.postcssLoaderPlugin(autoprefixer({
 		browsers: ['> 1%', 'ie 11'],
 		cascade: false
