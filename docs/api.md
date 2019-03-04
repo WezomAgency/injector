@@ -23,6 +23,7 @@
 - [Properties](#properties)
     - [isProduction](#isproduction)
     - [isWatching](#iswatching)
+    - [isHot](#ishot)
 - [Methods](#methods)
 - [Helpers](#helpers)
     - [helpers.clear()](#helpersclear)
@@ -344,6 +345,13 @@ _Parameters:_
 
 _Method returns:_ `Injector` instance
 
+Plugins that are already underhood:
+
+- [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
+- [webpack-build-notifier](https://github.com/RoccoC/webpack-build-notifier)
+- [browser-sync-webpack-plugin](https://github.com/Va1/browser-sync-webpack-plugin)
+- or [browser-sync-dev-hot-webpack-plugin](https://github.com/itgalaxy/browser-sync-dev-hot-webpack-plugin) (if use isHot)
+
 _Usage example:_
 
 ```js
@@ -404,6 +412,10 @@ injector.helpers.clear('./my-logs/stats.json');
 
 :arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
 
+```js
+injector.isProduction: boolean
+```
+
 _readonly_  
 _type: `boolean`_  
 _default: `false`_
@@ -411,7 +423,9 @@ _default: `false`_
 Determined value - is webpack will be runned in production mode or development mode
 
 ```js
-injector.isProduction: boolean
+if (injector.isProduction) {
+	console.log('production mode');
+}
 ```
 
 
@@ -423,6 +437,10 @@ injector.isProduction: boolean
 
 :arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
 
+```js
+injector.isWatching: boolean
+```
+
 _readonly_  
 _type: `boolean`_  
 _default: `false`_
@@ -430,7 +448,34 @@ _default: `false`_
 Determined value - is webpack will be watching files or not
 
 ```js
-injector.isWatching: boolean
+if (injector.isWatching) {
+	console.log('incremental');
+}
+```
+
+
+---
+
+
+
+### isWatching
+
+:arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
+
+```js
+injector.isHot: boolean
+```
+
+_readonly_  
+_type: `boolean`_  
+_default: `false`_
+
+Determined value - is HMR usage turn on or not
+
+```js
+if (injector.isHot) {
+	console.log('HMR turn on!');
+}
 ```
 
 
