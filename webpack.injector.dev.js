@@ -19,22 +19,21 @@ const sortCssMediaQueries = require('sort-css-media-queries');
 
 injector.app('./src/js/app.js', './dist/js/bundle-app.js')
 	.publicPath('/dist/js/')
-	.vendors('node_modules')
-	.externals({ jquery: 'jQuery' })
+	.external({ jquery: 'jQuery' })
 	.sourcemaps(injector.isProduction ? false : 'eval-source-map')
 	.sass('./src/sass/style.scss', './dist/css/bundle-style.css')
 	.sass('./src/sass/common.scss', './dist/css/bundle-common.css')
 	.cssLoaderOptions({
 		url: false
 	})
-	.postcssLoaderPlugins(autoprefixer({
+	.postcssLoaderPlugin(autoprefixer({
 		browsers: ['> 1%', 'ie 11'],
 		cascade: false
 	}))
-	.postcssLoaderPlugins(cssMqPacker({
+	.postcssLoaderPlugin(cssMqPacker({
 		sort: sortCssMediaQueries
 	}))
-	.postcssLoaderPlugins(injector.isProduction ? require('cssnano')({
+	.postcssLoaderPlugin(injector.isProduction ? require('cssnano')({
 		preset: ['default', {
 			zindex: false,
 			autoprefixer: false,
@@ -51,11 +50,9 @@ injector.helpers.copy('./node_modules/jquery/dist/jquery.min.js', './public/asse
 injector.helpers.copy('./src/js/app.js', './dist/js/app.js', true);
 injector.helpers.copy('./node_modules/webpack/readme.md', './dist/TEST.md', true);
 
-
-
-console.log(injector.__defaults);
-console.log('--------------');
-console.log(injector.exportConfig());
+// console.log(injector.__defaults);
+// console.log('--------------');
+// console.log(injector.exportConfig());
 
 // ----------------------------------------
 // Exports
