@@ -350,7 +350,7 @@ Plugins that are already underhood:
 - [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
 - [webpack-build-notifier](https://github.com/RoccoC/webpack-build-notifier)
 - [browser-sync-webpack-plugin](https://github.com/Va1/browser-sync-webpack-plugin)
-- or [browser-sync-dev-hot-webpack-plugin](https://github.com/itgalaxy/browser-sync-dev-hot-webpack-plugin) (if use isHot)
+- or [browser-sync-dev-hot-webpack-plugin](https://github.com/itgalaxy/browser-sync-dev-hot-webpack-plugin) (if [isHot](#ishot))
 
 _Usage example:_
 
