@@ -134,6 +134,70 @@ injector
 
 ---
 
+### exportConfig()
+
+:arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
+
+```js
+injector.exportConfig(): WebpackOptions
+```
+
+_Method returns:_ `Object` (WebpackOptions)  
+Use this method for export generated webpack configuration
+
+_Usage example:_
+
+```js
+const injector = require('webpack-injector');
+// setup...
+module.exports = injector.exportConfig();
+```
+
+---
+
+### postcssLoaderPlugins()
+
+:arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
+
+```js
+injector.postcssLoaderPlugins(plugin): Injector
+```
+
+Specify plugins for [postcss-loader](https://github.com/postcss/postcss-loader).
+
+_Parameters:_
+
+| Name | Type | Default | Description |
+| :--- | :--- | :------ | :---------- |
+| **plugin**  | `*` | --- | https://github.com/postcss/postcss-loader#plugins |
+
+_Method returns:_ `Injector` instance
+
+_Usage example:_
+
+```js
+injector
+    .postcssLoaderPlugins(
+    	require('autoprefixer')({
+            browsers: ['> 1%', 'ie 11'],
+            cascade: false
+        })
+    )
+    .postcssLoaderPlugins(
+    	require('cssnano')({
+            preset: [
+                'default',
+                {
+                    zindex: false,
+                    autoprefixer: false
+                }
+            ]
+        })
+    );
+```
+
+---
+
 ### publicPath()
 
 :arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
