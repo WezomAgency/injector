@@ -9,7 +9,7 @@
     - [cssLoaderOptions()](#cssloaderoptions)
     - [customRule()](#customRule)
     - [exportConfig()](#exportconfig)
-    - [externals()](#externals)
+    - [external()](#externals)
     - [postcssLoaderPlugin()](#postcssLoaderPlugin)
     - [publicPath()](#publicpath)
     - [plugins()](#plugins)
@@ -27,10 +27,19 @@
 - [Helpers](#helpers)
     - [helpers.clear()](#helpersclear)
     - [helpers.copy()](#helperscopy)
-    
+
+
+
+
 ---
 
+
+
+
 ## Methods
+
+
+
 
 ### app()
 
@@ -58,7 +67,13 @@ _Usage example:_
 injector.app('./src/app.js', './dist/bundled-app.js');
 ```
 
+
+
+
 ---
+
+
+
 
 ### cssLoaderOptions()
 
@@ -99,7 +114,13 @@ injector
     });
 ```
 
+
+
+
 ---
+
+
+
 
 ### customRule()
 
@@ -138,7 +159,13 @@ injector
     })
 ```
 
+
+
+
 ---
+
+
+
 
 ### exportConfig()
 
@@ -159,7 +186,58 @@ const injector = require('webpack-injector');
 module.exports = injector.exportConfig();
 ```
 
+
+
+
 ---
+
+
+
+
+### external()
+
+:arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
+
+```js
+injector.external(rule): Injector
+```
+
+Setting wepback.config option `externals`   
+See https://webpack.js.org/configuration/externals/  
+Call this method for each module you need.
+
+> _**Note!** This method for advanced users_
+
+_Parameters:_
+
+| Name | Type | Default | Description |
+| :--- | :--- | :------ | :---------- |
+| **module**  | `string|function|Object|RegExp` | --- | external module |
+
+_Method returns:_ `Injector` instance
+
+_Usage example:_
+
+```js
+injector
+    .customRule({
+        test: /\.json$/,
+        type: 'javascript/auto',
+        loader: 'custom-json-loader'
+    })
+    .customRule({
+        test: /\.modernizrrc$/,
+        loader: 'modernizr-loader!json5-loader'
+    })
+```
+
+
+
+
+---
+
+
+
 
 ### postcssLoaderPlugin()
 
@@ -203,7 +281,13 @@ injector
     );
 ```
 
+
+
+
 ---
+
+
+
 
 ### publicPath()
 
@@ -260,7 +344,13 @@ injector.helpers.clear('./public/assets/');
 injector.helpers.clear('./my-logs/stats.json');
 ```
 
+
+
+
 ---
+
+
+
 
 ## Properties
 
@@ -299,10 +389,16 @@ injector.isWatching: boolean
 ```
 
 
+
+
 ---
 
 
+
+
 ## Helpers
+
+
 
 
 ### helpers.clear()
@@ -333,7 +429,13 @@ injector.helpers.clear('./public/assets/');
 injector.helpers.clear('./my-logs/stats.json');
 ```
 
+
+
+
 ---
+
+
+
 
 ### helpers.copy()
 
@@ -366,6 +468,9 @@ const injector = require('webpack-injector');
 injector.helpers.copy('./node_modules/jquery/dist/jquery.min.js', './public/assets/js/vendors/jquery.js', true);
 injector.helpers.copy('./node_modules/webpack/readme.md', './dist/TEST.md', true);
 ```
+
+
+
 
 ---
 
