@@ -350,7 +350,7 @@ Plugins that are already underhood:
 - [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
 - [webpack-build-notifier](https://github.com/RoccoC/webpack-build-notifier)
 - [browser-sync-webpack-plugin](https://github.com/Va1/browser-sync-webpack-plugin)
-- or [browser-sync-dev-hot-webpack-plugin](https://github.com/itgalaxy/browser-sync-dev-hot-webpack-plugin) (if [isHot](#ishot))
+- or [browser-sync-dev-hot-webpack-plugin](https://github.com/itgalaxy/browser-sync-dev-hot-webpack-plugin) (_if [isHot](#ishot)_)
 
 _Usage example:_
 
@@ -424,7 +424,7 @@ Determined value - is webpack will be runned in production mode or development m
 
 ```js
 if (injector.isProduction) {
-	console.log('production mode');
+    console.log('production mode');
 }
 ```
 
@@ -449,7 +449,7 @@ Determined value - is webpack will be watching files or not
 
 ```js
 if (injector.isWatching) {
-	console.log('incremental');
+    console.log('incremental');
 }
 ```
 
@@ -458,7 +458,7 @@ if (injector.isWatching) {
 
 
 
-### isWatching
+### isHot
 
 :arrow_left: [Documentation](./index.md) | :arrow_up: [Top](#readme)
 
@@ -474,7 +474,7 @@ Determined value - is HMR usage turn on or not
 
 ```js
 if (injector.isHot) {
-	console.log('HMR turn on!');
+    console.log('HMR turn on!');
 }
 ```
 
